@@ -1,0 +1,21 @@
+{
+    "Dog": {
+      "isDangerous": false,
+      "description": "Dogs are domesticated mammals, not natural wild animals. They were originally bred from wolves.",
+      "habitat": "Found worldwide as pets or in the wild.",
+      "dangers": "Generally not dangerous, but may bite if provoked."
+    },
+    "Cat": {
+      "isDangerous": false,
+      "description": "Cats are small carnivorous mammals that are often kept as pets.",
+      "habitat": "Found worldwide as pets or in the wild.",
+      "dangers": "Generally not dangerous, but may scratch if threatened."
+    },
+    "Lion": {
+      "isDangerous": true,
+      "description": "Lions are large carnivorous animals and one of the big cats in the genus Panthera.",
+      "habitat": "Found in Africa and parts of India.",
+      "dangers": "Highly dangerous, capable of causing severe injuries or fatalities."
+    }
+  }
+  
