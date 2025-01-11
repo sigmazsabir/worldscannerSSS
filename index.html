@@ -1,1 +1,23 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorldScanner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>WorldScanner</h1>
+        <input type="file" id="image-upload" accept="image/*">
+        <button id="identify-btn">Identify Image</button>
+        <div id="result">
+            <h2>Sonuç</h2>
+            <p id="result-type">Tür: Bilinmiyor</p>
+            <div id="result-details"></div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
