@@ -58,35 +58,3 @@ document.getElementById('identify-btn').addEventListener('click', function() {
 
     reader.readAsDataURL(file); // Görseli Base64 formatında okuyun
 });
-// Yorumlar listesi ve butonlara erişim
-const yorumAlani = document.getElementById("yorum-alani");
-const yorumEkleBtn = document.getElementById("yorum-ekle");
-const yorumListesi = document.getElementById("yorum-listesi");
-
-// Yorum ekleme fonksiyonu
-yorumEkleBtn.addEventListener("click", () => {
-    const yorumMetni = yorumAlani.value.trim();
-    if (yorumMetni === "") {
-        alert("Lütfen bir yorum yazın!");
-        return;
-    }
-
-    // Yorum elemanını oluştur
-    const li = document.createElement("li");
-    li.textContent = yorumMetni;
-
-    // Silme butonu ekle
-    const silBtn = document.createElement("button");
-    silBtn.textContent = "Sil";
-    silBtn.style.marginLeft = "10px";
-    silBtn.addEventListener("click", () => {
-        yorumListesi.removeChild(li);
-    });
-
-    // Yorum ve silme butonunu listeye ekle
-    li.appendChild(silBtn);
-    yorumListesi.appendChild(li);
-
-    // Yorum alanını temizle
-    yorumAlani.value = "";
-});
