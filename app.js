@@ -35,14 +35,28 @@ document.getElementById('identify-btn').addEventListener('click', function() {
             body: JSON.stringify({
                 requests: [{
                     image: { content: base64Data },
-                    features: [{ type: 'LABEL_DETECTION', maxResults: 10 }]
+                    features: [
+                        { type: 'LABEL_DETECTION', maxResults: 10 },
+                        { type: 'TEXT_DETECTION', maxResults: 5 }
+                    ]
                 }]
             })
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                return response.text().then(text => {
+                    console.error('API Hatası:', response.status, text);
+                    throw new Error(`API Hatası (${response.status}): ${text || 'Yanıt alınamadı'}`);
+                });
+            }
+            return response.json();
+        })
         .then(data => {
-            if (!data.responses || !data.responses[0]) {
-                throw new Error('API geçersiz yanıt verdi');
+            console.log('API Yanıtı:', JSON.stringify(data, null, 2));
+            
+            if (!data || !data.responses || !Array.isArray(data.responses)) {
+                console.error('Geçersiz API yanıt formatı:', data);
+                throw new Error('API geçersiz yanıt formatı döndürdü');
             }
 
             const response = data.responses[0];
