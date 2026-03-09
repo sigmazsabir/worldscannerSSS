@@ -30,6 +30,7 @@ document.getElementById('identify-btn').addEventListener('click', function() {
 
         // Google Vision API isteği
         fetch('https://vision.googleapis.com/v1/images:annotate?key=AIzaSyByDxDw93I3UYMjH6dpnWoQKj3OYwa4wuw', {
+        
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
